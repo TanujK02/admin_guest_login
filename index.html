@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+   function myfunction()
+   {
+	   alert("function call");
+	   var type = document.getElementById("idselectlogintype").value;
+	   if(type == "Admin")
+		   {
+		            alert("admin");
+		            document.getElementById('idform').action = "welcome.jsp?selectlogintype=Admin";
+		   }
+	   else if(type == "Guest")
+		   {
+		   			alert("guest");
+		   			document.getElementById('idform').action = "welcome.jsp?selectlogintype=Guest";
+		   }
+	   else
+		   {
+		   			alert("Select either Admin mode or Guest mode");
+		   }
+   }
+</script>
+</head>
+<body>
+
+<form id="idform" name="myform" action="" onsubmit="return myfunction()">
+	<select id="idselectlogintype" name="selectlogintype">
+	     <option value="default">please select login type</option>
+	     <option  value="Admin" >Admin</option>
+	     <option value="Guest" >Guest</option>
+	</select>
+	<button type="submit" id="idbttnsubmit">Submit</button>
+</form>
+</body>
+</html>
